@@ -15,10 +15,20 @@ const Home = (props) => {
                 <Link to='/slider'>Slider</Link>
             </div>
             <div>
-                <Link to='/props'>Props</Link>
+                <Link to='/secondWay'>Second Way</Link>
+            </div>
+            <div>
+                <Link to='/thirdWay'>thirdWay</Link>
             </div>
         </div>
     );
+}
+
+const newWayRouter = (match) => {
+    console.log(match);
+    return (
+        <div>New Way to add routes via children <Link to='/'>Home</Link></div>
+    )
 }
 
 const RoutingNavigation = () => {
@@ -28,7 +38,11 @@ const RoutingNavigation = () => {
                 <Route exact path="/" component={Home} />
                 <Route path="/reduxDispatchers" component={ReduxDispatcher} />
                 <Route path="/slider" component={Slider} />
-                <Route path="/props" render={() => <h1>Props</h1>} />
+                <Route path="/secondWay" render={() => <h1>Second Way</h1>} />
+                <Route
+                    path="/thirdWay"
+                    children={() => <div>New Way to add routes via children <Link to='/'>Home</Link></div>}
+                />
                 <Redirect to="/" />
             </Switch>
         </BrowserRouter>
