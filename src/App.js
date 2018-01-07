@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Router from './containers/Router';
+import './App.css';
 
 export default function App({ store }) {
     return (

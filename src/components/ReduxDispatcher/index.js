@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import WebRtc from './WebRtc';
-import changeButtonStatus from './actions/common';
+import changeButtonStatus from '../../actions/common';
 
-function App({ buttonState, updateButtonState }) {
+function ReduxDispatcher({ buttonState, updateButtonState }) {
     const infoObject = {
         roomname : "test33333",
         signalmasterUrl : "www.example.com"
@@ -21,7 +21,7 @@ function App({ buttonState, updateButtonState }) {
     );
 }
 
-App.propTypes = {
+ReduxDispatcher.propTypes = {
     buttonState: PropTypes.string.isRequired,
     updateButtonState: PropTypes.func.isRequired,
 };
@@ -36,4 +36,4 @@ const mapDispatchToProps = dispatch => ({
     },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxDispatcher);
