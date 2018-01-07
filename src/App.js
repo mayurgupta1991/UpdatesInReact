@@ -1,43 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import RaisedButton from 'material-ui/RaisedButton';
-import WebRtc from './WebRtc';
-import changeButtonStatus from './actions/common';
+import Router from './containers/Router';
 
-function App({ buttonState, updateButtonState }) {
-    const infoObject = {
-        roomname : "test33333",
-        signalmasterUrl : "www.example.com"
-    }
+export default function App({ store }) {
     return (
-        <MuiThemeProvider muiTheme={getMuiTheme({})}>
-            <div>
-                <RaisedButton
-                    label={buttonState}
-                    onClick={updateButtonState}
-                />
-                <WebRtc obj={infoObject}/>
-            </div>
-        </MuiThemeProvider >
+        <Provider store={store}>
+            <MuiThemeProvider muiTheme={getMuiTheme({})}>
+                <Router />
+            </MuiThemeProvider>
+        </Provider>
     );
 }
 
 App.propTypes = {
-    buttonState: PropTypes.string.isRequired,
-    updateButtonState: PropTypes.func.isRequired,
+    store: PropTypes.object.isRequired,
 };
-
-const mapStateToProps = reduxState => ({
-    buttonState: reduxState.appData.buttonState,
-});
-
-const mapDispatchToProps = dispatch => ({
-    updateButtonState() {
-        dispatch(changeButtonStatus());
-    },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
