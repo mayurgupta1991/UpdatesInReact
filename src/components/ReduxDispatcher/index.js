@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import WebRtc from './WebRtc';
 import changeButtonStatus from '../../actions/common';
 
-function ReduxDispatcher({ buttonState, updateButtonState }) {
+function ReduxDispatcher({ buttonState, updateButtonState, callSaga }) {
     const infoObject = {
         roomname : "test33333",
         signalmasterUrl : "www.example.com"
@@ -32,6 +32,7 @@ const mapStateToProps = reduxState => ({
 
 const mapDispatchToProps = dispatch => ({
     updateButtonState() {
+        dispatch({type: 'USER_FETCH_REQUESTED'});
         dispatch(changeButtonStatus());
     },
 });

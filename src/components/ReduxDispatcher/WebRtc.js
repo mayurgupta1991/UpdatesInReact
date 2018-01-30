@@ -9,7 +9,7 @@ export default class WebRtc extends Component {
             autoRequestMedia: true,
             url : this.props.obj.signalmasterUrl
         });
-        console.log("webrtc component mounted", this.webrtc);
+        //console.log("webrtc component mounted", this.webrtc);
     }
 
     render() {

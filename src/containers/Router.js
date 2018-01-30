@@ -4,7 +4,7 @@ import ReduxDispatcher from '../components/ReduxDispatcher/index';
 import Slider from '../components/Slider/index';
 
 const Home = (props) => {
-    console.log(props);
+    // console.log(props);
     return (
         <div>
             <h1>Home</h1>
@@ -25,7 +25,7 @@ const Home = (props) => {
 }
 
 const newWayRouter = (match) => {
-    console.log(match);
+   // console.log(match);
     return (
         <div>New Way to add routes via children <Link to='/'>Home</Link></div>
     )
