@@ -1,16 +1,12 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import { fetchWebApi } from './webapis/dashboard';
+import { all, put, call, select, takeEvery, takeLatest } from 'redux-saga/effects';
+import { fetchData } from './actions/async/getUserData';
 import { getResponse } from './actions/common';
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchUser() {
-    const url = 'https://api.welcometv.net/api/v1/videoList/npQNyYVn0fgUokNaUoTXsg?langId=1&categoryId=4&page=1&size=8';
     try {
-        const user = yield call(() => fetchWebApi('', url));
-        user.request.then(response => {
-           // yield put(getResponse(response));
-            console.log(response);
-        }).catch(e => { console.log(e); });
+        const userData = yield call(fetchData());
+        yield put(getResponse(userData));
     } catch (e) {
         console.log(e);
     }

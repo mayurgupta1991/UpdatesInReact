@@ -6,9 +6,9 @@ export default function changeButtonStatus() {
     };
 }
 
-export function getResponse(response) {
-    console.log(response);
+export function getResponse(data) {
     return {
         type: GET_API_FETCH,
+        data
     };
 }
