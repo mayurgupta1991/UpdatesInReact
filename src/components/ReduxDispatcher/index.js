@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import WebRtc from './WebRtc';
+import { USER_FETCH_REQUESTED } from '../../constants';
 import changeButtonStatus from '../../actions/common';
 
 function ReduxDispatcher({ buttonState, updateButtonState, callSaga }) {
@@ -32,7 +33,7 @@ const mapStateToProps = reduxState => ({
 
 const mapDispatchToProps = dispatch => ({
     updateButtonState() {
-        dispatch({type: 'USER_FETCH_REQUESTED'});
+        dispatch({type: USER_FETCH_REQUESTED});
         dispatch(changeButtonStatus());
     },
 });

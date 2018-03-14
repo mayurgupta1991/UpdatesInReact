@@ -1,4 +1,5 @@
 import { all, put, call, select, takeEvery, takeLatest } from 'redux-saga/effects';
+import { USER_FETCH_REQUESTED } from './constants';
 import { fetchData } from './actions/async/getUserData';
 import { getResponse } from './actions/common';
 
@@ -17,7 +18,7 @@ function* fetchUser() {
  Allows concurrent fetches of user.
  */
 function* mySaga() {
-    yield takeEvery("USER_FETCH_REQUESTED", fetchUser);
+    yield takeEvery(USER_FETCH_REQUESTED, fetchUser);
 }
 
 /*
