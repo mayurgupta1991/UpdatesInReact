@@ -11,9 +11,8 @@ function getConfig(accessToken) {
             cancel = c;
         }),
         headers: {
-            Accept: 'application/vnd.api+json',
-            'Content-Type': 'application/vnd.api+json',
-            Authorization: accessToken,
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
         },
     };
 

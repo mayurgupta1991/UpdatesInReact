@@ -12,3 +12,8 @@ export const fetchData = () =>  {
             return error;
         });
 };
+
+
+const people = 'https://swapi.co/api/planets/?search=a';
+const planet = 'https://swapi.co/api/people/?search=Luke%20Skywalker'
+

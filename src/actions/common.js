@@ -5,10 +5,3 @@ export default function changeButtonStatus() {
         type: TOGGLE_BUTTON,
     };
 }
-
-export function getResponse(data) {
-    return {
-        type: GET_API_FETCH,
-        data
-    };
-}

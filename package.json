@@ -5,23 +5,20 @@
   "dependencies": {
     "axios": "^0.18.0",
     "deep-freeze-es6": "^1.0.1",
+    "dom-to-image": "^2.6.0",
     "enzyme": "^3.2.0",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-audioplayer": "^0.3.1",
+    "react-cookie": "^2.1.4",
     "react-dom": "^16.2.0",
-    "react-helmet": "^5.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
-    "react-simplewebrtc": "0.0.18",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
-    "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
-    "sinon": "^4.1.2",
-    "slick-carousel": "^1.8.1"
+    "sinon": "^4.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,7 +34,6 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "jest": "^21.2.1",
-    "react-slick": "^0.18.1",
     "react-test-renderer": "^16.2.0"
   }
 }

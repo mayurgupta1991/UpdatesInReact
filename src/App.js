@@ -3,14 +3,14 @@ import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Router from './containers/Router';
+import Gatekeeper from './Gatekeeper';
 import './App.css';
 
 export default function App({ store }) {
     return (
         <Provider store={store}>
             <MuiThemeProvider muiTheme={getMuiTheme({})}>
-                <Router />
+                <Gatekeeper />
             </MuiThemeProvider>
         </Provider>
     );
