@@ -16,6 +16,7 @@ function updateButtonState(state) {
 }
 
 function getUserData(state, { data }) {
+    console.log(data);
     return { ...state, data };
 }
 

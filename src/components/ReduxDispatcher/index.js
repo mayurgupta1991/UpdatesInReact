@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import WebRtc from './WebRtc';
-import changeButtonStatus from '../../actions/common';
+import { changeButtonStatus, callSagaApi } from '../../actions/common';
 
-function ReduxDispatcher({ buttonState, updateButtonState, callSaga }) {
+function ReduxDispatcher({ buttonState, updateButtonState }) {
     const infoObject = {
         roomname : "test33333",
         signalmasterUrl : "www.example.com"
@@ -32,7 +32,7 @@ const mapStateToProps = reduxState => ({
 
 const mapDispatchToProps = dispatch => ({
     updateButtonState() {
-        dispatch({type: 'USER_FETCH_REQUESTED'});
+        dispatch(callSagaApi());
         dispatch(changeButtonStatus());
     },
 });
