@@ -1,0 +1,16 @@
+version: 2
+jobs:
+    run_test_case:
+        docker:
+            - image: circleci/node:lts
+        working_directory: ~/repo
+        steps:
+          - checkout
+          - run:
+              name: Install Dependencs
+              command: yarn
+workflows:
+    version: 2
+    test:
+        jobs:
+          - run_test_case
