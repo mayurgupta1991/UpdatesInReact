@@ -11,7 +11,6 @@ export default function App({ store }) {
         <Provider store={store}>
             <MuiThemeProvider muiTheme={getMuiTheme({})}>
                 <Router />
-
             </MuiThemeProvider>
         </Provider>
     );

@@ -8,17 +8,22 @@ jobs:
             keys:
                 - v1-dependencies-{{ checksum "yarn.lock" }}
         steps:
-          - checkout
-          - run:
-              name: Install Dependenciess
-              command: yarn
-          - save_cache:
-              paths:
-                  - node_modules
-              key: v1-dependencies-{{ checksum "yarn.lock" }}
-          - run:
-              name: Run Test
-              command: yarn test
+            - checkout
+            - run:
+                name: Install Dependenciess
+                command: yarn
+            - save_cache:
+                paths:
+                    - node_modules
+                key: v1-dependencies-{{ checksum "yarn.lock" }}
+            - run:
+                name: Run Test
+                command: yarn test
+            - run:
+                name: Run Build
+                command: yarn build
+            - store_artifacts:
+                path: build
 workflows:
     version: 2
     test:
