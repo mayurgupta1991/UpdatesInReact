@@ -1,4 +1,4 @@
-import { all, put, call, select, takeEvery, takeLatest } from 'redux-saga/effects';
+import { all, put, call, takeLatest } from 'redux-saga/effects';
 import { fetchData } from './actions/async/getUserData';
 import { getResponse } from './actions/common';
 import { USER_FETCH_REQUESTED } from './constants';

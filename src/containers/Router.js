@@ -24,13 +24,6 @@ const Home = (props) => {
     );
 }
 
-const newWayRouter = (match) => {
-   // console.log(match);
-    return (
-        <div>New Way to add routes via children <Link to='/'>Home</Link></div>
-    )
-}
-
 const RoutingNavigation = () => {
     return (
         <BrowserRouter>
